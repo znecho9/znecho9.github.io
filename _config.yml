@@ -21,10 +21,10 @@
 title: LinZ Personal Website
 email: znecho9@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-Individual Engineer & Researcher /n Focus on Wind Energy
+Individual Engineer & Researcher Focus on Wind Energy
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: Lucien Lin
+url: "https://znecho9.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: LucienLin
 github_username: Znecho9
 
 # Build settings

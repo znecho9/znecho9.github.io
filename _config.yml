@@ -28,7 +28,7 @@ twitter_username: LucienLin
 github_username: Znecho9
 
 # Build settings
-theme: minima
+theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
 

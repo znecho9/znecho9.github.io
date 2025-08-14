@@ -16,7 +16,7 @@ source "https://rubygems.org"
 ruby "3.4.5"
 
 # Jekyll and its dependencies
-gem "jekyll", "~> 4.4"
+#gem "jekyll", "~> 4.4"
 gem "webrick", "~> 1.8"
 
 #gem "minima", "~> 2.5"
@@ -24,7 +24,8 @@ gem "minimal-mistakes-jekyll"
 
 # Plugins
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  #gem "jekyll-feed", "~> 0.12"
+  gem "github-pages"
   gem "jekyll-include-cache"
 end
 

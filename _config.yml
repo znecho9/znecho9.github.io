@@ -18,14 +18,6 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-#title: LinZ Personal Website
-#email: znecho9@gmail.com
-#description: >- # this means to ignore newlines until "baseurl:"
- #Individual Engineer & Researcher Focus on Wind Energy
-#baseurl: "" # the subpath of your site, e.g. /blog
-#url: "https://znecho9.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: LucienLin
-#github_username: Znecho9
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
@@ -74,10 +66,10 @@ rtl                      : # true, false (default) # turns direction of the page
 title                    : "Site Title"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
+name                     : "linz"
 description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
+url                      : "https://znecho9.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"

@@ -20,7 +20,7 @@ gem "jekyll", "~> 4.4"
 gem "webrick", "~> 1.8"
 
 #gem "minima", "~> 2.5"
-gem "minimal-mistakes-jekyll"
+#gem "minimal-mistakes-jekyll"
 
 # Plugins
 group :jekyll_plugins do

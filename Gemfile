@@ -20,9 +20,12 @@ gem "jekyll", "~> 4.4"
 gem "webrick", "~> 1.8"
 
 #gem "minima", "~> 2.5"
-#gem "minimal-mistakes-jekyll"
+gem "minimal-mistakes-jekyll"
 
 # Plugins
+# gem "github-pages", group: :jekyll_plugins
+#gem "jekyll-include-cache", group: :jekyll_plugins
+
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-include-cache"

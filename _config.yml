@@ -28,7 +28,7 @@ twitter_username: LucienLin
 github_username: Znecho9
 
 # Build settings
-remote_theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 plugins:
   - jekyll-feed
   - jekyll-include-cache

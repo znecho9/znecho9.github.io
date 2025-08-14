@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
 # file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
@@ -8,40 +9,45 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
-#gem "jekyll", "~> 4.4.1"
+# gem "jekyll", "~> 4.4.1"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
+
+# Specify the Ruby version you are using
+ruby "3.4.5"
+
+# Jekyll and its dependencies
+gem "jekyll", "~> 4.4"
+gem "webrick", "~> 1.8"
 
 #gem "minima", "~> 2.5"
 gem "minimal-mistakes-jekyll"
 
+# Plugins
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-include-cache"
+end
+
+
+
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 
-gem "github-pages", "~> 227", group: :jekyll_plugins
+# gem "github-pages", "~> 227", group: :jekyll_plugins
 
 # Gemfile
 
-# source "https://rubygems.org"
-source "https://rubygems.org"
 
-# Use Jekyll's official theme
-gem "minima", "~> 2.5"
-
-# Jekyll and its dependencies
-#gem "jekyll", "~> 4.2"
-#gem "webrick", "~> 1.8"
 
 # Add this line to avoid dependency conflicts with github-pages
 # gem "github-pages", "~> 227", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 
-gem "jekyll-include-cache", group: :jekyll_plugins
+# gem "jekyll-include-cache", group: :jekyll_plugins
 
 
-group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-end
+
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.

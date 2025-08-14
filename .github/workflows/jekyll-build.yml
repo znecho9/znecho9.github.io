@@ -26,6 +26,8 @@ jobs:
         with:
           ruby-version: '3.3' # You can change this to your desired Ruby version
           #bundler-cache: true
+      - name: Install dependencies
+        run: bundle install
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5

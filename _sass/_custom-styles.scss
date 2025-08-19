@@ -1,0 +1,23 @@
+/* 减小所有页面页眉图片的高度 */
+
+.page__header {
+  /* 设置一个固定的最大高度，你可以根据需要调整这个值 */
+  max-height: 250px !important; 
+  /* 确保超出部分被隐藏，图片不会溢出 */
+  overflow: hidden;
+  
+  .page__lead {
+    position: relative;
+    
+    img {
+      /* 强制图片占据容器的100%宽度 */
+      width: 100%;
+      height: auto;
+      /* 垂直居中图片，避免只显示图片的上半部分 */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # main navigation links
 main:
-  - title: "Blog"
+  - title: Blog
       url: /
-        - title: "About"
+        - title: About
             url: /about/

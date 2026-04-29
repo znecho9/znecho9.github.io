@@ -1,5 +1,141 @@
-<!-- start custom head snippets -->
+<!-- Academic Neural: Brain Connectivity Theme -->
+<canvas id="nn-canvas"></canvas>
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<style>
+#nn-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.38;
+}
+html, body { background-color: #07101f !important; }
+body {
+  color: #c2dce8 !important;
+  font-family: 'Georgia','Palatino Linotype',Palatino,serif !important;
+  line-height: 1.75 !important;
+}
+.masthead {
+  background: rgba(7,16,31,0.93) !important;
+  border-bottom: 1px solid rgba(0,180,216,0.22) !important;
+  backdrop-filter: blur(10px) !important;
+  position: relative;
+  z-index: 100;
+}
+.masthead a,.masthead__menu a,.greedy-nav a {
+  color: #8ec8e0 !important;
+  transition: color 0.25s !important;
+}
+.masthead a:hover,.masthead__menu a:hover,.greedy-nav a:hover { color: #00d4ff !important; }
+.site-title { font-family: 'Georgia',serif !important; letter-spacing: 0.06em !important; }
+h1,h2,h3,h4,h5,h6,.page__title,.archive__item-title a,.nav__title {
+  font-family: 'Georgia','Palatino Linotype',Palatino,serif !important;
+  color: #d0ecf8 !important;
+  letter-spacing: 0.025em;
+}
+a { color: #00b4d8 !important; text-decoration: none !important; transition: color 0.2s,text-shadow 0.2s !important; }
+a:hover { color: #90e0ef !important; text-shadow: 0 0 10px rgba(0,180,216,0.45); }
+.sidebar,.sidebar.sticky { background-color: transparent !important; position: relative; z-index: 2; }
+.author__avatar img {
+  border: 2px solid rgba(0,180,216,0.45) !important;
+  box-shadow: 0 0 24px rgba(0,180,216,0.2),0 0 8px rgba(0,180,216,0.15) !important;
+  border-radius: 50% !important;
+}
+.author__name { color: #d0ecf8 !important; letter-spacing: 0.07em; }
+.author__bio { color: #7ab0c8 !important; }
+.author__urls li a { color: #7ab0c8 !important; }
+.author__urls li a:hover { color: #00d4ff !important; }
+#main,.masthead,.page__footer,.sidebar,.greedy-nav { position: relative; z-index: 2; }
+.archive__item {
+  border-left: 2px solid rgba(0,180,216,0.2);
+  padding-left: 0.75em;
+  transition: border-color 0.3s, padding-left 0.3s;
+}
+.archive__item:hover { border-color: rgba(0,180,216,0.7); padding-left: 1em; }
+.archive__item-title a { color: #a8d8f0 !important; }
+.archive__item-excerpt { color: #6fa0b8 !important; }
+.page__footer {
+  background: #04090f !important;
+  border-top: 1px solid rgba(0,180,216,0.18) !important;
+  color: #3a6a80 !important;
+  position: relative; z-index: 2;
+}
+.page__footer a { color: #3a6a80 !important; }
+.page__footer-copyright { color: #2a4a5c !important; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #07101f; }
+::-webkit-scrollbar-thumb { background: rgba(0,180,216,0.28); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,180,216,0.55); }
+::selection { background: rgba(0,180,216,0.25); color: #d0ecf8; }
+</style>
 
-<!-- end custom head snippets -->
+<script>
+(function () {
+  'use strict';
+  var canvas = document.getElementById('nn-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var CFG = { count: 72, maxDist: 160, speed: 0.22, nodeMin: 1.2, nodeMax: 2.8, glowMult: 3.5, mouseRadius: 210 };
+  var nodes = [];
+  var mouse = { x: -9999, y: -9999 };
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  function spawn() {
+    nodes = [];
+    for (var i = 0; i < CFG.count; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * CFG.speed, vy: (Math.random() - 0.5) * CFG.speed,
+        r: CFG.nodeMin + Math.random() * (CFG.nodeMax - CFG.nodeMin),
+        phase: Math.random() * Math.PI * 2, freq: 0.012 + Math.random() * 0.018
+      });
+    }
+  }
+  function draw(ts) {
+    requestAnimationFrame(draw);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var t = (ts || 0) * 0.001;
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+      if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+    }
+    for (var i = 0; i < nodes.length; i++) {
+      for (var j = i + 1; j < nodes.length; j++) {
+        var a = nodes[i], b = nodes[j];
+        var dx = a.x - b.x, dy = a.y - b.y;
+        var d = Math.sqrt(dx * dx + dy * dy);
+        if (d < CFG.maxDist) {
+          var alpha = (1 - d / CFG.maxDist) * 0.38;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = 'rgba(0,180,216,' + alpha + ')';
+          ctx.lineWidth = (1 - d / CFG.maxDist) * 0.9;
+          ctx.stroke();
+        }
+      }
+    }
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      var pulse = 0.65 + 0.35 * Math.sin(t * n.freq * 60 + n.phase);
+      var mdx = n.x - mouse.x, mdy = n.y - mouse.y;
+      var mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+      var boost = mDist < CFG.mouseRadius ? (1 - mDist / CFG.mouseRadius) * 1.4 : 0;
+      var glowR = n.r * CFG.glowMult * pulse * (1 + boost * 0.8);
+      var g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, glowR);
+      g.addColorStop(0, 'rgba(0,212,255,' + (0.55 * pulse + boost * 0.35) + ')');
+      g.addColorStop(0.45, 'rgba(0,160,210,' + (0.10 * pulse) + ')');
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.beginPath(); ctx.arc(n.x, n.y, glowR, 0, Math.PI * 2);
+      ctx.fillStyle = g; ctx.fill();
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.r * (1 + boost * 0.4), 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(140,225,255,' + (0.75 + boost * 0.25) + ')';
+      ctx.fill();
+    }
+  }
+  window.addEventListener('mousemove', function (e) { mouse.x = e.clientX; mouse.y = e.clientY; });
+  window.addEventListener('resize', function () { resize(); spawn(); });
+  canvas.style.opacity = '0.38';
+  resize(); spawn(); requestAnimationFrame(draw);
+}());
+</script>

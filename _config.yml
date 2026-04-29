@@ -25,7 +25,7 @@ locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "EchoValley"
 title_separator          : "-"
-subtitle                 : "PhD Candidate" # site tagline that appears below site title in masthead
+subtitle: # site tagline that appears below site title in masthead
 name                     : "Zinan"
 description              : "Independent Engineer & Researcher"
 url                      : "https://znecho9.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"

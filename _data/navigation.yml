@@ -1,6 +1,16 @@
 # main navigation links
 main:
-  - title: Blog
-    url: /
   - title: About
-    url: /about/
+    url: /
+  - title: Publications
+    url: /publications/
+  - title: Talks
+    url: /talks/
+  - title: Teaching
+    url: /teaching/
+  - title: Portfolio
+    url: /portfolio/
+  - title: Blog
+    url: /year-archive/
+  - title: CV
+    url: /cv/

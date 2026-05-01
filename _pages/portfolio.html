@@ -1,0 +1,22 @@
+---
+layout: archive
+title: "Portfolio"
+permalink: /portfolio/
+author_profile: true
+---
+
+Selected projects, prototypes, and systems notes.
+
+{% assign portfolio = site.portfolio | sort: "date" | reverse %}
+<div class="academic-list">
+{% for item in portfolio %}
+  <article class="academic-list__item">
+    <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
+    <p class="academic-list__meta">
+      {% if item.role %}{{ item.role }}{% endif %}
+      {% if item.date %}{% if item.role %} · {% endif %}{{ item.date | date: "%Y" }}{% endif %}
+    </p>
+    {% if item.excerpt %}<p>{{ item.excerpt | markdownify | strip_html }}</p>{% endif %}
+  </article>
+{% endfor %}
+</div>

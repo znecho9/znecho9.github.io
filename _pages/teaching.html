@@ -1,0 +1,23 @@
+---
+layout: archive
+title: "Teaching"
+permalink: /teaching/
+author_profile: true
+---
+
+Teaching notes and course outlines in preparation. These are framed as public
+learning materials rather than formal institutional courses.
+
+{% assign teaching = site.teaching | sort: "date" | reverse %}
+<div class="academic-list">
+{% for item in teaching %}
+  <article class="academic-list__item">
+    <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
+    <p class="academic-list__meta">
+      {% if item.type %}{{ item.type }}{% endif %}
+      {% if item.date %}{% if item.type %} · {% endif %}{{ item.date | date: "%Y" }}{% endif %}
+    </p>
+    {% if item.excerpt %}<p>{{ item.excerpt | markdownify | strip_html }}</p>{% endif %}
+  </article>
+{% endfor %}
+</div>

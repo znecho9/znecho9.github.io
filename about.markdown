@@ -1,18 +1,14 @@
 ---
-layout: posts
+layout: single
 title: About
 permalink: /about/
+author_profile: true
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I am **Zinan Lin**, an independent engineer and researcher. This site is a
+public notebook for software systems, applied intelligence, technical writing,
+and the long-term work of becoming more capable.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+For the main academic profile, start from the [homepage](/). For structured
+materials, see [Publications](/publications/), [Talks](/talks/),
+[Teaching](/teaching/), [Portfolio](/portfolio/), and [CV](/cv/).

@@ -1,0 +1,23 @@
+---
+layout: archive
+title: "Talks"
+permalink: /talks/
+author_profile: true
+---
+
+Draft talks, seminar outlines, and future presentation topics.
+
+{% assign talks = site.talks | sort: "date" | reverse %}
+<div class="academic-list">
+{% for item in talks %}
+  <article class="academic-list__item">
+    <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
+    <p class="academic-list__meta">
+      {% if item.type %}{{ item.type }}{% endif %}
+      {% if item.venue %}{% if item.type %}, {% endif %}{{ item.venue }}{% endif %}
+      {% if item.date %} · {{ item.date | date: "%B %-d, %Y" }}{% endif %}
+    </p>
+    {% if item.excerpt %}<p>{{ item.excerpt | markdownify | strip_html }}</p>{% endif %}
+  </article>
+{% endfor %}
+</div>

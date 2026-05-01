@@ -18,16 +18,16 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
 
-minimal_mistakes_skin: "dark" #"default" #"aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "default" #"default" #"aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "EchoValley"
+title                    : "Zinan Lin"
 title_separator          : "-"
-subtitle: # site tagline that appears below site title in masthead
-name                     : "Zinan"
-description              : "Independent Engineer & Researcher"
+subtitle                 : "Independent Engineer & Researcher"
+name                     : "Zinan Lin"
+description              : "Academic-style personal website for engineering, research, writing, and public notes."
 url                      : "https://znecho9.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "znecho9/znecho9.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -36,7 +36,7 @@ repository               : "znecho9/znecho9.github.io" # GitHub username/repo-na
  #- /assets/js/your-custom-head-script.js
 teaser: "/assets/images/screenshot.jpeg" # path of fallback teaser image, e.g. 
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : "Zinan Lin"
 breadcrumbs              : # true, false (default)
 words_per_minute         : 200
 enable_copy_code_button  : # true, false (default)
@@ -124,50 +124,30 @@ analytics:
 author:
   name             : "Zinan Lin"
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Independent Engineer & Researcher."
+  bio              : "Independent Engineer & Researcher. I work across software systems, applied intelligence, and long-form technical writing."
   location         : "China"
-  email            : "znecho9@gmail"
+  email            : "znecho9@gmail.com"
+  github           : "znecho9"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:znecho9@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "https://znecho9.github.io"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://github.com/znecho9"
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
+      url: "https://github.com/znecho9"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:znecho9@gmail.com"
   since: "2013"
 
 
@@ -239,6 +219,21 @@ sass:
 # Outputting
 permalink: /:categories/:title/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# Academic Pages style collections
+collections:
+  publications:
+    output: true
+    permalink: /publications/:path/
+  talks:
+    output: true
+    permalink: /talks/:path/
+  teaching:
+    output: true
+    permalink: /teaching/:path/
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
 
 
 # Pagination with jekyll-paginate
@@ -323,6 +318,15 @@ compress_html:
 
 # Defaults
 defaults:
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      share: false
+
   # _posts
   - scope:
       path: ""
@@ -338,3 +342,35 @@ defaults:
       share: true
       related: true
       show_date: true
+  # _publications
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: true
+      share: false
+  # _talks
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: single
+      author_profile: true
+      share: false
+  # _teaching
+  - scope:
+      path: ""
+      type: teaching
+    values:
+      layout: single
+      author_profile: true
+      share: false
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: true
+      share: false

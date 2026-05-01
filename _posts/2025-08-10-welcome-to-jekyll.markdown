@@ -1,30 +1,21 @@
 ---
 layout: posts
-title:  "Welcome to Jekyll!"
-date:   2025-08-10 20:47:11 +0800
+title: "Building a Personal Research Site"
+date: 2025-08-10 20:47:11 +0800
 classes: wide
-categories: jekyll update
+categories: notes
+header:
+  image: /assets/images/bio-photo.jpg
+excerpt: "A first note on turning a personal website into a durable place for research, writing, and project memory."
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Jekyll requires blog post files to be named according to the following format:
+A personal site should do more than list links. It can become a small research
+system: a place where ideas, experiments, reading notes, and technical decisions
+stay connected long enough to become useful.
 
-`YEAR-MONTH-DAY-title.MARKUP`
+This redesign is a first pass at that direction. Publications and working notes
+sit near the front, blog posts remain easy to browse, and the homepage gives
+recent work enough visual weight to invite return visits.
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+The next step is to replace placeholders with real project records, paper drafts,
+and reflections from ongoing engineering work.

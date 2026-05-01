@@ -1,16 +1,13 @@
 # main navigation links
 main:
-  - title: About
+  - title: Home
     url: /
   - title: Publications
     url: /publications/
-  - title: Talks
-    url: /talks/
-  - title: Teaching
-    url: /teaching/
-  - title: Portfolio
-    url: /portfolio/
   - title: Blog
     url: /year-archive/
   - title: CV
     url: /cv/
+  - title: GitHub
+    url: https://github.com/znecho9
+    target: _blank

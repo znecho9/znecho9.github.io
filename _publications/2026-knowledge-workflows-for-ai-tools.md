@@ -4,6 +4,12 @@ collection: publications
 date: 2026-04-15
 venue: "Technical note"
 status: "in preparation"
+authors: "Zinan Lin"
+image: "/assets/images/bio-photo.jpg"
+tags:
+  - AI Tools
+  - Knowledge Work
+  - Research
 excerpt: "A preliminary note on how AI tools can support research reading, code exploration, synthesis, and reflective writing without replacing human judgment."
 ---
 

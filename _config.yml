@@ -25,7 +25,7 @@ locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Zinan Lin"
 title_separator          : "-"
-subtitle                 : "Independent Engineer & Researcher"
+subtitle                 :
 name                     : "Zinan Lin"
 description              : "Academic-style personal website for engineering, research, writing, and public notes."
 url                      : "https://znecho9.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -35,7 +35,7 @@ repository               : "znecho9/znecho9.github.io" # GitHub username/repo-na
  #- https://code.jquery.com/jquery-3.2.1.min.js
  #- /assets/js/your-custom-head-script.js
 teaser: "/assets/images/screenshot.jpeg" # path of fallback teaser image, e.g. 
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo                     : "/assets/images/logo.svg" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "Zinan Lin"
 breadcrumbs              : # true, false (default)
 words_per_minute         : 200
@@ -77,7 +77,7 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
-search                   : true #false (default)
+search                   : false #false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
 lunr:

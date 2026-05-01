@@ -4,6 +4,12 @@ collection: publications
 date: 2026-05-01
 venue: "Working paper"
 status: "draft"
+authors: "Zinan Lin"
+image: "/assets/images/screenshot.jpeg"
+tags:
+  - Independent Work
+  - Research Systems
+  - Writing
 excerpt: "A draft research note on treating independent software work as a disciplined form of inquiry, documentation, and cumulative capability building."
 ---
 

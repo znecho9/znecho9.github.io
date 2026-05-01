@@ -1,55 +1,90 @@
 ---
 layout: single
-title: "About"
-author_profile: true
+title: "Home"
 permalink: /
+classes:
+  - wide
+  - kf-home-page
+author_profile: false
 ---
 
-I am **Zinan Lin**, an independent engineer and researcher interested in software
-systems, applied intelligence, and the craft of building durable personal
-knowledge. My current work is organized around a simple question: how can
-engineering practice become a better instrument for understanding the world?
+{% assign recent_publications = site.publications | sort: "date" | reverse %}
+{% assign recent_posts = site.posts | sort: "date" | reverse %}
 
-My background combines production engineering, self-directed research, and
-long-form writing. I use this site as an academic-style notebook for work in
-progress: publications and essays in preparation, talks I may give, teaching
-materials, project notes, and reflections on work and life.
+<div class="kf-home">
+  <section class="kf-hero">
+    <div class="kf-hero__copy">
+      <h1 class="serif-font">Zinan Lin</h1>
+      <p class="kf-lead">Hi, I am Zinan, an independent engineer and researcher working across software systems, applied intelligence, and long-form technical writing.</p>
+      <p>This site collects my research notes, publications in progress, project writeups, and essays on building durable personal knowledge systems.</p>
+      <div class="kf-actions">
+        <a class="kf-button" href="{{ '/cv/' | relative_url }}">About me</a>
+        <a class="kf-link" href="{{ '/publications/' | relative_url }}">View publications</a>
+      </div>
+    </div>
+    <div class="kf-hero__media">
+      <img src="{{ '/assets/images/bio-photo.jpg' | relative_url }}" alt="Abstract profile artwork for Zinan Lin">
+    </div>
+  </section>
 
-## Research Interests
+  <div class="kf-main-grid">
+    <section class="kf-publications">
+      <h2 class="kf-section-title serif-font"><a href="{{ '/publications/' | relative_url }}">Recent Publications:</a></h2>
+      <div class="kf-publication-grid">
+        {% for item in recent_publications limit: 4 %}
+        <article class="kf-card">
+          <a class="kf-card__media" href="{{ item.url | relative_url }}">
+            <img src="{{ item.image | default: site.teaser | relative_url }}" alt="">
+          </a>
+          <div class="kf-card__body">
+            <h3 class="kf-card__title"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+            <p class="kf-card__meta"><em>{{ item.authors | default: site.author.name }}</em>{% if item.venue %}, {{ item.venue }}{% endif %}{% if item.date %}, {{ item.date | date: "%Y" }}{% endif %}</p>
+            {% if item.tags %}
+            <ul class="kf-tags">
+              {% for tag in item.tags limit: 3 %}
+              <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+            <p class="kf-card__excerpt">{{ item.excerpt | markdownify | strip_html | truncate: 145 }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
 
-- Human-centered software systems and developer tools
-- Applied AI, knowledge workflows, and research infrastructure
-- Reliable interfaces for long-running personal and collaborative work
-- Writing as a method for technical thinking and self-education
+    <aside class="kf-news">
+      <h3 class="serif-font">Recent News</h3>
+      <div class="kf-news__item">
+        <time datetime="2026-05">May 2026</time>
+        <p>Rebuilt this site into a cleaner academic homepage with a publication-first layout.</p>
+      </div>
+      <div class="kf-news__item">
+        <time datetime="2026-05">May 2026</time>
+        <p>Drafting notes on independent engineering as a repeatable research practice.</p>
+      </div>
+      <div class="kf-news__item">
+        <time datetime="2026-04">April 2026</time>
+        <p>Started organizing technical notes around AI-assisted research workflows.</p>
+      </div>
+    </aside>
+  </div>
 
-## News
-
-- **2026.05**: Rebuilt this website into an Academic Pages style research homepage.
-- **2026.05**: Preparing draft notes on independent engineering and personal research systems.
-- **2025.08**: Began writing publicly about work transitions, agency, and long-term capability.
-
-## Selected Publications
-
-{% assign selected_publications = site.publications | sort: "date" | reverse | slice: 0, 3 %}
-{% if selected_publications.size > 0 %}
-{% for item in selected_publications %}
-- **[{{ item.title }}]({{ item.url | relative_url }})**<br>
-  {{ item.venue }}{% if item.date %}, {{ item.date | date: "%Y" }}{% endif %}. {{ item.excerpt | markdownify | strip_html }}
-{% endfor %}
-{% else %}
-Publication drafts will be listed here as they become ready.
-{% endif %}
-
-## Recent Writing
-
-{% assign recent_posts = site.posts | slice: 0, 3 %}
-{% for post in recent_posts %}
-- **[{{ post.title }}]({{ post.url | relative_url }})**<br>
-  {{ post.date | date: "%B %-d, %Y" }}. {{ post.excerpt | markdownify | strip_html | truncate: 160 }}
-{% endfor %}
-
-## Current Work
-
-I am currently building a small research agenda around independent engineering:
-how to keep technical work creative, how to make research notes compound, and how
-to design tools that make careful thinking easier to sustain.
+  <section class="kf-blog-section">
+    <h2 class="kf-section-title serif-font"><a href="{{ '/year-archive/' | relative_url }}">Recent Blog Posts:</a></h2>
+    <div class="kf-blog-grid">
+      {% for post in recent_posts limit: 3 %}
+      <article class="kf-card">
+        <a class="kf-card__media" href="{{ post.url | relative_url }}">
+          <img src="{{ post.header.image | default: site.teaser | relative_url }}" alt="">
+        </a>
+        <div class="kf-card__body">
+          <h3 class="kf-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="kf-card__meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+          <p class="kf-card__excerpt">{{ post.excerpt | markdownify | strip_html | truncate: 145 }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</div>

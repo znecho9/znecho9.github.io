@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: single
 title: "Building a Personal Research Site"
 date: 2025-08-10 20:47:11 +0800
 classes: wide

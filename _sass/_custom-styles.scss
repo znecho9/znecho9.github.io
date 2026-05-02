@@ -1,3 +1,9 @@
-.kf-hero__copy h1 {
+.kf-hero__copy {
   font-size: 3rem;
+}
+
+@media (max-width: 900px) {
+  .kf-hero__copy h1 {
+    font-size: 3rem;
+  }
 }

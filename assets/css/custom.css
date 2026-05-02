@@ -18,7 +18,9 @@
 }
 
 .hero {
-  background: #F7F560;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
+    url("/assets/images/Background.jpg") center / cover no-repeat;
 }
 
 .hero p {

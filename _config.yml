@@ -1,53 +1,27 @@
-remote_theme: "mmistakes/minimal-mistakes@4.27.3"
-minimal_mistakes_skin: "default"
-
-plugins:
-  - jekyll-remote-theme
-  - jekyll-feed
-  - jekyll-include-cache
-
-locale: "en-US"
 title: "Zinan Lin"
-title_separator: "-"
-name: "Zinan Lin"
-description: "Academic-style personal website for engineering, research, writing, and public notes."
-url: "https://znecho9.github.io"
+email: znecho9@gmail.com
+timezone: UTC
 baseurl: ""
+url: "https://znecho9.github.io"
 repository: "znecho9/znecho9.github.io"
+permalink: "/:title/"
+logo: "assets/images/logo.svg"
+author: Zinan
+paginate: 30
+locale: en_us
+lang: en_us
+feed_items: 10
+feed_update_period: daily
+feed_update_frequency: 1
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
 
-teaser: "/assets/images/screenshot.jpeg"
-logo: "/assets/images/logo.svg"
-masthead_title: "Zinan Lin"
-search: false
-words_per_minute: 200
-
-author:
-  name: "Zinan Lin"
-  avatar: "/assets/images/bio-photo.jpg"
-  bio: "Independent Engineer & Researcher. I work across software systems, applied intelligence, and long-form technical writing."
-  location: "China"
-  email: "znecho9@gmail.com"
-  github: "znecho9"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:znecho9@gmail.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://znecho9.github.io"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/znecho9"
-
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/znecho9"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:znecho9@gmail.com"
-  since: "2013"
+sass:
+  sass_dir: _sass
+  style: compressed
 
 include:
   - _pages
@@ -55,30 +29,13 @@ include:
 exclude:
   - Gemfile
   - README.md
+  - LICENSE.txt
   - vendor
   - node_modules
   - .bundle
   - .sass-cache
   - .jekyll-cache
   - .jekyll-metadata
-
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-markdown: kramdown
-highlighter: rouge
-excerpt_separator: "\n\n"
-
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  toc_levels: 1..6
-
-sass:
-  sass_dir: _sass
-  style: compressed
-
-permalink: /:categories/:title/
 
 collections:
   publications:
@@ -94,57 +51,56 @@ collections:
     output: true
     permalink: /portfolio/:path/
 
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+authors:
+  Zinan:
+    name: Zinan Lin
+    display_name: Zinan
+    avatar: "assets/images/bio-photo.jpg"
+    email: znecho9@gmail.com
+    web: https://znecho9.github.io
+    github: https://github.com/znecho9
+    description: "Independent Engineer & Researcher."
+
+social:
+  github: https://github.com/znecho9
+  email: mailto:znecho9@gmail.com
+  website: https://znecho9.github.io
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
 
 defaults:
   - scope:
       path: "_pages"
       type: pages
     values:
-      layout: single
-      author_profile: true
-      share: false
+      layout: page
   - scope:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: false
-      share: true
-      related: true
-      show_date: true
+      layout: post
+      author: Zinan
   - scope:
       path: ""
       type: publications
     values:
-      layout: single
-      author_profile: true
-      share: false
+      layout: page
   - scope:
       path: ""
       type: talks
     values:
-      layout: single
-      author_profile: true
-      share: false
+      layout: page
   - scope:
       path: ""
       type: teaching
     values:
-      layout: single
-      author_profile: true
-      share: false
+      layout: page
   - scope:
       path: ""
       type: portfolio
     values:
-      layout: single
-      author_profile: true
-      share: false
+      layout: page

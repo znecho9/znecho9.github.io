@@ -5,7 +5,11 @@ date: 2026-04-15
 venue: "Technical note"
 status: "in preparation"
 authors: "Zinan Lin"
-image: "/assets/images/bio-photo.jpg"
+image: "assets/images/bio-photo.jpg"
+publish_author: "Zinan Lin"
+publish_venue: "Technical note"
+publish_year: 2026
+featured: true
 tags:
   - AI Tools
   - Knowledge Work

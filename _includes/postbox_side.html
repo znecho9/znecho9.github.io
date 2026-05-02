@@ -1,0 +1,12 @@
+{% assign entry = include.entry | default: post %}
+<div class="card">
+  <a href="{{ entry.url | relative_url }}">
+    {% if entry.image %}
+    <img class="rounded mb-4" src="{{ entry.image | relative_url }}" alt="{{ entry.title }}">
+    {% endif %}
+  </a>
+  <div class="card-block">
+    <h2 class="card-title h6 serif-font"><a href="{{ entry.url | relative_url }}">{{ entry.title }}</a></h2>
+    <p class="card-text text-muted">{{ entry.excerpt | markdownify | strip_html | truncatewords: 10 }}</p>
+  </div>
+</div>

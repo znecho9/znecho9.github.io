@@ -1,11 +1,9 @@
 ---
-layout: single
+layout: post
 title: "Building a Personal Research Site"
 date: 2025-08-10 20:47:11 +0800
-classes: wide
 categories: notes
-header:
-  image: /assets/images/bio-photo.jpg
+image: assets/images/bio-photo.jpg
 excerpt: "A first note on turning a personal website into a durable place for research, writing, and project memory."
 ---
 

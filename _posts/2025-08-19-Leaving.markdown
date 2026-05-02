@@ -1,8 +1,7 @@
 ---
 title: Leaving
-layout: single
-header:
-  image: /assets/images/screenshot.jpeg
+layout: post
+image: assets/images/screenshot.jpeg
 ---
 
 

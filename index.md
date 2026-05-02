@@ -1,90 +1,51 @@
 ---
-layout: single
-title: "Home"
-permalink: /
-classes:
-  - wide
-  - kf-home-page
-author_profile: false
+title: Home
+layout: default
 ---
 
 {% assign recent_publications = site.publications | sort: "date" | reverse %}
 {% assign recent_posts = site.posts | sort: "date" | reverse %}
 
-<div class="kf-home">
-  <section class="kf-hero">
-    <div class="kf-hero__copy">
-      <h1 class="serif-font">Echo Valley</h1>
-      <p class="kf-lead">Hi, I am Zinan, an independent engineer and researcher working across civil engineering, wind engineering, and long-form technical writing.</p>
-      <p>This site collects my research notes, publications in progress, project writeups, and essays on building durable personal knowledge systems.</p>
-      <div class="kf-actions">
-        <a class="kf-button" href="{{ '/cv/' | relative_url }}">About me</a>
-        <a class="kf-link" href="{{ '/publications/' | relative_url }}">View publications</a>
-      </div>
+{% if page.url == "/" %}
+<div class="rounded mb-5 hero">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-md-6">
+      <h1 class="font-weight-bold mb-4 serif-font">Zinan Lin</h1>
+      <p>Hi, I am Zinan, an independent engineer and researcher working across software systems, applied intelligence, and long-form technical writing.</p>
+      <p>I use this site to collect research notes, publications in progress, project writeups, and essays on building durable personal knowledge systems.</p>
+      <p><br></p>
+      <a href="{{ '/about/' | relative_url }}" class="btn btn-dark text-white px-5 btn-lg">About me</a>
     </div>
-    <div class="kf-hero__media">
-      <img src="{{ '/assets/images/bio-photo.jpg' | relative_url }}" alt="Abstract profile artwork for Zinan Lin">
+    <div class="col-md-6 text-right pl-0 pl-lg-4">
+      <img class="intro" height="500" src="{{ '/assets/images/bio-photo.jpg' | relative_url }}" alt="Zinan Lin profile artwork">
     </div>
-  </section>
-
-  <div class="kf-main-grid">
-    <section class="kf-publications">
-      <h2 class="kf-section-title serif-font"><a href="{{ '/publications/' | relative_url }}">Recent Publications:</a></h2>
-      <div class="kf-publication-grid">
-        {% for item in recent_publications limit: 4 %}
-        <article class="kf-card">
-          <a class="kf-card__media" href="{{ item.url | relative_url }}">
-            <img src="{{ item.image | default: site.teaser | relative_url }}" alt="">
-          </a>
-          <div class="kf-card__body">
-            <h3 class="kf-card__title"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
-            <p class="kf-card__meta"><em>{{ item.authors | default: site.author.name }}</em>{% if item.venue %}, {{ item.venue }}{% endif %}{% if item.date %}, {{ item.date | date: "%Y" }}{% endif %}</p>
-            {% if item.tags %}
-            <ul class="kf-tags">
-              {% for tag in item.tags limit: 3 %}
-              <li>{{ tag }}</li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-            <p class="kf-card__excerpt">{{ item.excerpt | markdownify | strip_html | truncate: 145 }}</p>
-          </div>
-        </article>
-        {% endfor %}
-      </div>
-    </section>
-
-    <aside class="kf-news">
-      <h3 class="serif-font">Recent News</h3>
-      <div class="kf-news__item">
-        <time datetime="2026-05">May 2026</time>
-        <p>Rebuilt this site into a cleaner academic homepage with a publication-first layout.</p>
-      </div>
-      <div class="kf-news__item">
-        <time datetime="2026-05">May 2026</time>
-        <p>Drafting notes on independent engineering as a repeatable research practice.</p>
-      </div>
-      <div class="kf-news__item">
-        <time datetime="2026-04">April 2026</time>
-        <p>Started organizing technical notes around AI-assisted research workflows.</p>
-      </div>
-    </aside>
   </div>
+</div>
+{% endif %}
 
-  <section class="kf-blog-section">
-    <h2 class="kf-section-title serif-font"><a href="{{ '/year-archive/' | relative_url }}">Recent Blog Posts:</a></h2>
-    <div class="kf-blog-grid">
-      {% for post in recent_posts limit: 3 %}
-      <article class="kf-card">
-        <a class="kf-card__media" href="{{ post.url | relative_url }}">
-          <img src="{{ post.header.image | default: site.teaser | relative_url }}" alt="">
-        </a>
-        <div class="kf-card__body">
-          <h3 class="kf-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p class="kf-card__meta">{{ post.date | date: "%B %-d, %Y" }}</p>
-          <p class="kf-card__excerpt">{{ post.excerpt | markdownify | strip_html | truncate: 145 }}</p>
-        </div>
-      </article>
+<h3 class="font-weight-bold mb-4 serif-font"><a href="{{ '/publications/' | relative_url }}">Recent Publications:</a></h3>
+<br>
+<section class="row">
+  <div class="col-sm-8">
+    <div class="row">
+      {% for item in recent_publications limit: 4 %}
+      <div class="col-md-6 mb-5">
+        {% include postbox.html entry=item %}
+      </div>
       {% endfor %}
     </div>
-  </section>
-</div>
+  </div>
+  <div class="col-sm-4">
+    {% include sidebar.html %}
+  </div>
+</section>
+
+<h3 class="font-weight-bold mb-4 serif-font">Recent Blog Posts:</h3>
+<br>
+<section class="row">
+  {% for post in recent_posts limit: 3 %}
+  <div class="col-md-4 mb-5">
+    {% include postbox.html entry=post %}
+  </div>
+  {% endfor %}
+</section>

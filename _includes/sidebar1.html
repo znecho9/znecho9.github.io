@@ -1,0 +1,9 @@
+<div class="sidebar sticky-top">
+  <div class="sidebar-section">
+    <h5><span>Latest Project</span></h5>
+    {% assign projects = site.portfolio | sort: "date" | reverse %}
+    {% for item in projects limit: 1 %}
+      {% include postbox_side.html entry=item %}
+    {% endfor %}
+  </div>
+</div>

@@ -5,7 +5,11 @@ date: 2026-05-01
 venue: "Working paper"
 status: "draft"
 authors: "Zinan Lin"
-image: "/assets/images/screenshot.jpeg"
+image: "assets/images/screenshot.jpeg"
+publish_author: "Zinan Lin"
+publish_venue: "Working paper"
+publish_year: 2026
+featured: true
 tags:
   - Independent Work
   - Research Systems

@@ -1,27 +1,14 @@
 ---
-layout: archive
-title: "Publications"
+layout: page
+title: "Research"
 permalink: /publications/
-author_profile: true
 ---
 
-This page collects working papers, technical notes, and research essays. Items
-marked **draft** are placeholders for work in progress and should be treated as
-early research directions rather than formal publications.
+This page collects working papers, technical notes, and research essays. Items marked **draft** are placeholders for work in progress and should be treated as early research directions rather than formal publications.
 
 {% assign publications = site.publications | sort: "date" | reverse %}
-<div class="academic-list">
+
+<h4>Working Papers & Technical Notes</h4>
 {% for item in publications %}
-  <article class="academic-list__item">
-    <h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
-    <p class="academic-list__meta">
-      {% if item.venue %}{{ item.venue }}{% endif %}
-      {% if item.date %}{% if item.venue %}, {% endif %}{{ item.date | date: "%Y" }}{% endif %}
-      {% if item.status %} · {{ item.status }}{% endif %}
-    </p>
-    {% if item.citation %}<p>{{ item.citation }}</p>{% endif %}
-    {% if item.excerpt %}<p>{{ item.excerpt | markdownify | strip_html }}</p>{% endif %}
-    {% if item.paperurl %}<p><a href="{{ item.paperurl }}">Paper / notes</a></p>{% endif %}
-  </article>
+  {% include pub_menu.html entry=item %}
 {% endfor %}
-</div>

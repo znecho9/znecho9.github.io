@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% seo %}
+  <link href="{{ '/assets/css/theme.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/assets/css/custom.css' | relative_url }}" rel="stylesheet">
+</head>
+
+{% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+<body class="{{ layout }}">
+  <div class="navigation-wrap start-header start-style">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand text-dark font-weight-bold big d-flex align-items-center" href="{{ '/' | relative_url }}">
+          {% if site.logo %}
+          <img class="mr-2" width="80" src="{{ site.logo | relative_url }}" alt="{{ site.title }} logo">
+          {% else %}
+          <span class="d-none d-md-inline-block">{{ site.title }}</span>
+          {% endif %}
+        </a>
+        <span class="nav-divider">|</span>
+
+        <div class="d-flex align-items-center follow-links">
+          <span class="ml-3 text-muted small">Follow: </span>
+          <a class="d-inline-block social-icon" target="_blank" rel="noopener" href="{{ site.social.github }}" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.6 4.7 18.7 5 18.7 5c.7 1.6.2 2.9.1 3.2.8.9 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.2.9 2.4v3.6c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/>
+            </svg>
+          </a>
+          <a class="d-inline-block social-icon" href="{{ site.social.email }}" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-.4 4.25-7.07 5.3a.9.9 0 0 1-1.06 0L4.4 8.25V6.8l7.6 5.7 7.6-5.7v1.45Z"/>
+            </svg>
+          </a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+          </svg>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto font-weight-bold d-flex align-items-center">
+            {% for item in site.data.menus.topmenu %}
+            <li class="nav-item">
+              <a class="nav-link px-3 {% if item.class %}{{ item.class }}{% endif %}" href="{% unless item.external %}{{ site.baseurl }}/{% endunless %}{{ item.url }}">{{ item.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <footer class="footer container text-center">
+    <ul class="p-0 mb-1 small">
+      {% for item in site.data.menus.footermenu %}
+      <li>
+        <a href="{% unless item.external %}{{ site.baseurl }}/{% endunless %}{{ item.url }}">{{ item.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="copyright small">
+      Copyright &copy; {{ site.title }}. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/bootstrap.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+</body>
+</html>

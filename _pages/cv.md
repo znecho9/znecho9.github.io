@@ -1,8 +1,7 @@
 ---
-layout: single
+layout: page
 title: "CV"
 permalink: /cv/
-author_profile: true
 ---
 
 This CV is a working draft. It is intended to make the site structure useful now

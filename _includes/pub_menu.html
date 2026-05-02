@@ -1,0 +1,18 @@
+{% assign entry = include.entry | default: item %}
+<div class="publication-entry mb-4">
+  <h5 class="serif-font mb-1"><a href="{{ entry.url | relative_url }}">{{ entry.title }}</a></h5>
+  <p class="small text-muted mb-2">
+    {% if entry.authors %}<i>{{ entry.authors }}</i>{% endif %}
+    {% if entry.venue %}{% if entry.authors %}, {% endif %}{{ entry.venue }}{% endif %}
+    {% if entry.date %}, {{ entry.date | date: "%Y" }}{% endif %}
+    {% if entry.status %} · {{ entry.status }}{% endif %}
+  </p>
+  {% if entry.tags %}
+  <ul class="tags">
+    {% for tag in entry.tags limit: 4 %}
+    <li><a>{{ tag }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if entry.excerpt %}<p class="text-muted">{{ entry.excerpt | markdownify | strip_html }}</p>{% endif %}
+</div>

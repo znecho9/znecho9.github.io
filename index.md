@@ -14,8 +14,8 @@ author_profile: false
 <div class="kf-home">
   <section class="kf-hero">
     <div class="kf-hero__copy">
-      <h1 class="serif-font">Zinan Lin</h1>
-      <p class="kf-lead">Hi, I am Zinan, an independent engineer and researcher working across software systems, applied intelligence, and long-form technical writing.</p>
+      <h1 class="serif-font">Echo Valley</h1>
+      <p class="kf-lead">Hi, I am Zinan, an independent engineer and researcher working across civil engineering, wind engineering, and long-form technical writing.</p>
       <p>This site collects my research notes, publications in progress, project writeups, and essays on building durable personal knowledge systems.</p>
       <div class="kf-actions">
         <a class="kf-button" href="{{ '/cv/' | relative_url }}">About me</a>

@@ -5,7 +5,7 @@ baseurl: ""
 url: "https://znecho9.github.io"
 repository: "znecho9/znecho9.github.io"
 permalink: "/:title/"
-logo: "assets/images/logo.svg"
+logo: "assets/images/logo.PNG"
 author: Zinan
 paginate: 30
 locale: en_us

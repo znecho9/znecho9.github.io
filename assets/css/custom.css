@@ -26,8 +26,8 @@
 }
 
 .hero .intro {
-  width: min(500px, 100%);
-  height: min(500px, 76vw);
+  width: min(300px, 100%);
+  height: min(300px, 76vw);
   border-radius: 50%;
   object-fit: cover;
   object-position: center;

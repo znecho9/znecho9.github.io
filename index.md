@@ -17,7 +17,7 @@ layout: default
       <a href="{{ '/about/' | relative_url }}" class="btn btn-dark text-white px-5 btn-lg">About me</a>
     </div>
     <div class="col-md-6 text-right pl-0 pl-lg-4">
-      <img class="intro" height="500" src="{{ '/assets/images/bio-photo.jpg' | relative_url }}" alt="Zinan Lin profile artwork">
+      <img class="intro" width="380" height="380" src="{{ '/assets/images/bio-photo.jpg' | relative_url }}" alt="Zinan Lin profile artwork">
     </div>
   </div>
 </div>

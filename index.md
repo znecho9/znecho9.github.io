@@ -10,7 +10,7 @@ layout: default
 <div class="rounded mb-5 hero">
   <div class="row align-items-center justify-content-between">
     <div class="col-md-6">
-      <h1 class="font-weight-bold mb-4 serif-font">Zinan Lin</h1>
+      <h1 class="font-weight-bold mb-4 serif-font">Echo Valley</h1>
       <p>Hi, I am Zinan, an independent engineer and researcher working across civil engineering, wind engineering, and long-form technical writing.</p>
       <p>I use this site to collect research notes, publications in progress, project writeups, and essays on building durable personal knowledge systems.</p>
       <p><br></p>
